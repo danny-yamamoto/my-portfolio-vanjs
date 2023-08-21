@@ -19,11 +19,11 @@ type CertItem = {
     title: string;
 }  
 
-export const intro = (myname) => {
+export const intro = (myname: string) => {
     return div(h1(myname), p("Welcome to my portfolio"))
 }
 
-export const addIntro = (myname) => {
+export const addIntro = (myname: string) => {
     const target = document.querySelector("section#intro")
     if (target) {
         van.add(target, intro(myname))
@@ -38,7 +38,6 @@ export const articles = async () => {
       url: item.url,
       id: item.id,
     }));
-    const len = res.length;
     return ul(res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title})))))
 }
 
