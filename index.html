@@ -7,14 +7,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <script type="module">
-            import { addArticles } from "./src/main.ts"
+            import { addExperience, addArticles, addCertificates } from "./src/main.ts"
+            import { addCopyrights, addSns } from "./src/footer.ts"
+            addExperience()
             addArticles()
+            addCertificates()
+            addCopyrights("Daisuke Yamamoto")
+            addSns()
         </script>
     </head>
     
     <body>
-    
-        <script type="module" src="/src/main.ts"></script>
 
         <!-- Introduction Section -->
         <section id="intro">
@@ -37,8 +40,8 @@
             <h2>Certificates</h2>
         </section>
     
-        <footer>
-            <p>&copy; 2023 hoge. All rights reserved.</p>
+        <footer id="sns">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
         </footer>
     
     </body>
