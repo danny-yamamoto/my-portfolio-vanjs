@@ -39,15 +39,14 @@ export const articles = async () => {
       id: item.id,
     }));
     const len = res.length;
-    return div(
-        h2("Top 20 Articles"),
-        ul(res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title})))))
-    )
+    return ul(res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title})))))
 }
 
 export const addArticles = async () => {
     const target = document.querySelector("section#articles")
     if (target) {
+        const heading = h2("Top 20 Articles")
+        van.add(target, heading)
         van.add(target, await articles())
     }
 }
@@ -78,6 +77,8 @@ export const experience = () => {
 export const addExperience = () => {
     const target = document.querySelector("section#experience")
     if (target) {
+        const heading = h2("Experience")
+        van.add(target, heading)
         van.add(target, experience())
     }
 }
@@ -101,6 +102,8 @@ export const certificates = () => {
 export const addCertificates = () => {
     const target = document.querySelector("section#certificates")
     if (target) {
+        const heading = h2("Certificates")
+        van.add(target, heading)
         van.add(target, certificates())
     }
 }

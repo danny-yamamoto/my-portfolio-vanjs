@@ -26,7 +26,7 @@ flex-direction: column;
     background-color: #ddd;
 }
 
-#articles div {
+#articles h2 {
     text-align: center;
 }
 
