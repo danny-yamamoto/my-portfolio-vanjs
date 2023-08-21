@@ -1,6 +1,6 @@
 import van from "vanjs-core"
 
-const { div, h1, p, a, li, ul } = van.tags
+const { div, h1, h2, p, a, li, ul } = van.tags
 
 type ExperienceItem = {
     id: string;
@@ -38,8 +38,10 @@ export const articles = async () => {
       url: item.url,
       id: item.id,
     }));
-    return ul(
-        res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title}))))
+    const len = res.length;
+    return div(
+        h2("Top 20 Articles"),
+        ul(res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title})))))
     )
 }
 

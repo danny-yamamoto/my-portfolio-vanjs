@@ -9,41 +9,41 @@
             import { addSiteTitle } from "./src/head.ts"
             import { addIntro, addExperience, addArticles, addCertificates } from "./src/main.ts"
             import { addCopyrights, addSns } from "./src/footer.ts"
-            addIntro("Daisuke Yamamoto")
-            addSiteTitle("Daisuke Yamamoto")
+            const myname = "Daisuke Yamamoto"
+            addIntro(myname)
+            addSiteTitle(myname)
             addExperience()
             addArticles()
             addCertificates()
-            addCopyrights("Daisuke Yamamoto")
+            addCopyrights(myname)
             addSns()
         </script>
     </head>
-    
+
     <body>
 
         <!-- Introduction Section -->
         <section id="intro">
         </section>
-    
+
         <!-- Experience Section -->
         <section id="experience">
             <h2>Experience</h2>
         </section>
-    
+
         <!-- Articles Section -->
         <section id="articles">
-            <h2>Top 20 Articles</h2>
         </section>
-    
+
         <!-- Certificates Section -->
         <section id="certificates">
             <h2>Certificates</h2>
         </section>
-    
+
         <footer id="sns">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
         </footer>
-    
+
     </body>
-    
+
 </html>
