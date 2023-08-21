@@ -3,12 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>hoge's Portfolio</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <script type="module">
-            import { addExperience, addArticles, addCertificates } from "./src/main.ts"
+            import { addSiteTitle } from "./src/head.ts"
+            import { addIntro, addExperience, addArticles, addCertificates } from "./src/main.ts"
             import { addCopyrights, addSns } from "./src/footer.ts"
+            addIntro("Daisuke Yamamoto")
+            addSiteTitle("Daisuke Yamamoto")
             addExperience()
             addArticles()
             addCertificates()
@@ -21,8 +23,6 @@
 
         <!-- Introduction Section -->
         <section id="intro">
-            <h1>hoge</h1>
-            <p>Welcome to my portfolio</p>
         </section>
     
         <!-- Experience Section -->

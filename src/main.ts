@@ -1,6 +1,6 @@
 import van from "vanjs-core"
 
-const {a, li, ul } = van.tags
+const { div, h1, p, a, li, ul } = van.tags
 
 type ExperienceItem = {
     id: string;
@@ -18,6 +18,17 @@ type CertItem = {
     blockchainId: string;
     title: string;
 }  
+
+export const intro = (myname) => {
+    return div(h1(myname), p("Welcome to my portfolio"))
+}
+
+export const addIntro = (myname) => {
+    const target = document.querySelector("section#intro")
+    if (target) {
+        van.add(target, intro(myname))
+    }
+}
 
 export const articles = async () => {
     const response = await fetch(`https://qiita.com/api/v2/users/daisuke-yamamoto/items?page=1&per_page=20`);
