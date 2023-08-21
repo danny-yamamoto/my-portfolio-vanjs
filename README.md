@@ -21,9 +21,9 @@
 
 ## Add Integrations and deployment
 ```bash
+npm create vite@latest
 npm install vanjs-core
 npm install
-npm install vite
 ```
 
 ## Development
