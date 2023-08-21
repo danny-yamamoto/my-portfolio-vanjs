@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "vanjs-core": "^1.1.0",
+    "vite": "^4.4.9"
+  }
+}
