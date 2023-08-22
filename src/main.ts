@@ -30,8 +30,8 @@ export const addIntro = (myname: string) => {
     }
 }
 
-export const articles = async () => {
-    const response = await fetch(`https://qiita.com/api/v2/users/daisuke-yamamoto/items?page=1&per_page=20`);
+export const articles = async (count: number) => {
+    const response = await fetch(`https://qiita.com/api/v2/users/daisuke-yamamoto/items?page=1&per_page=${count}`);
     const qiitaItems: any[] = await response.json();
     const res: QiitaItem[] = qiitaItems.map(item => ({
       title: item.title,
@@ -41,12 +41,12 @@ export const articles = async () => {
     return ul(res.map(({ id, url, title }) => (li({key: id}, a({href: url, target: "_blank", text: title})))))
 }
 
-export const addArticles = async () => {
+export const addArticles = async (count: number) => {
     const target = document.querySelector("section#articles")
     if (target) {
-        const heading = h2("Top 20 Articles")
+        const heading = h2("Top ", count, " Articles")
         van.add(target, heading)
-        van.add(target, await articles())
+        van.add(target, await articles(count))
     }
 }
 
